@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Casino Web - Ruleta y Blackjack</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+</head>
+<body>
+    {% if session.get('username') %}
+    <nav class="navbar">
+        <a href="{{ url_for('menu') }}">Menú</a>
+        <span class="nav-user">Usuario: {{ session['username'] }}</span>
+        <span class="nav-balance">Saldo: <span id="balance-display">{{ session['balance'] }}</span> fichas</span>
+        <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+    </nav>
+    {% endif %}
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

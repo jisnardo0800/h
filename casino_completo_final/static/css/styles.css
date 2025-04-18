@@ -1,0 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+/* Barra de navegación (usuario, saldo, menú, logout) */
+.navbar {
+    background-color: #ececec;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.navbar a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+.navbar .nav-user,
+.navbar .nav-balance {
+    margin-right: 15px;
+}
+.content {
+    margin: 0 10px;
+}
+h2 {
+    color: #333;
+}
+/* Mensajes de error */
+.error {
+    color: red;
+    font-weight: bold;
+}
+/* Layout de juego (ruleta/blackjack) */
+.game-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.board-area {
+    flex: 1 1 300px;
+    max-width: 400px;
+}
+.wheel-area {
+    flex: 1 1 300px;
+    text-align: center;
+}
+/* Estilos del tablero de ruleta */
+#roulette-table {
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+#roulette-table .cell {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #333;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    position: relative;
+    color: #fff;
+}
+.red {
+    background-color: #c0392b;
+}
+.black {
+    background-color: #2d3436;
+}
+.green {
+    background-color: #27ae60;
+}
+/* Selección de fichas */
+.chips-selection {
+    margin-bottom: 10px;
+}
+.chips-selection span {
+    margin-right: 10px;
+    font-weight: bold;
+}
+.chip {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.chip[data-value="10"] {
+    background-color: #ecf0f1;
+    color: #000;
+}
+.chip[data-value="50"] {
+    background-color: #e67e22;
+    color: #fff;
+}
+.chip[data-value="100"] {
+    background-color: #8e44ad;
+    color: #fff;
+}
+.chip.selected {
+    outline: 3px solid yellow;
+}
+/* Fichas apostadas en el tablero de ruleta */
+.bet-chip {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: yellow;
+    color: #000;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+}
+/* Imagen de la ruleta */
+#wheel {
+    width: 300px;
+    transition: transform 4s ease-out;
+}
+/* Mensaje de resultado de ruleta */
+#result-message {
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+.win-msg {
+    color: green;
+    font-weight: bold;
+}
+.lose-msg {
+    color: red;
+    font-weight: bold;
+}
+.neutral-msg {
+    color: orange;
+    font-weight: bold;
+}
+/* Resaltar número ganador en el tablero */
+.cell.win {
+    box-shadow: 0 0 10px 4px gold;
+}
+

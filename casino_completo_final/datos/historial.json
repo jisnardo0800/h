@@ -1,0 +1,16 @@
+[
+    {
+        "usuario": "jajaj@gmail.com",
+        "juego": "ruleta",
+        "monto": 500,
+        "resultado": "Sali\u00f3 el 14 (negro). Perdiste $500. ",
+        "saldo_final": 500
+    },
+    {
+        "usuario": "jajaj@gmail.com",
+        "juego": "blackjack",
+        "monto": 0,
+        "resultado": "Perdiste: 17 vs 19",
+        "saldo_final": 4500
+    }
+]

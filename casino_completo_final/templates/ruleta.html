@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Juego de Ruleta</h2>
+<p>Selecciona una ficha y haz clic en los números para realizar tus apuestas.</p>
+<div class="game-area">
+    <div class="board-area">
+        <div class="chips-selection">
+            <span>Fichas:</span>
+            <button type="button" class="chip" data-value="10">10</button>
+            <button type="button" class="chip" data-value="50">50</button>
+            <button type="button" class="chip" data-value="100">100</button>
+        </div>
+        <table id="roulette-table">
+            <tr>
+                <td id="cell-0" data-number="0" class="cell green" colspan="3">0</td>
+            </tr>
+            {% for i in range(1, 13) %}
+            <tr>
+                {% set base = (i-1)*3 + 1 %}
+                {% for j in range(3) %}
+                    {% set num = base + j %}
+                    <td id="cell-{{ num }}" data-number="{{ num }}" class="cell {% if num in red_numbers %}red{% else %}black{% endif %}">{{ num }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="wheel-area">
+        <img id="wheel" src="{{ url_for('static', filename='images/wheel.png') }}" alt="Ruleta" />
+        <br>
+        <button id="spin-button">Girar</button>
+        <div id="result-message"></div>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/ruleta.js') }}"></script>
+{% endblock %}
